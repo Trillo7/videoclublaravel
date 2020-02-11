@@ -8,27 +8,27 @@
             <div class="card-header text-center">
                 Añadir película
             </div>
-            <div class="card-body" style="padding:30px">
+            <form method="POST" class="card-body" style="padding:30px">
 
-                {{-- TODO: Abrir el formulario e indicar el método POST --}}
-
-                {{-- TODO: Protección contra CSRF --}}
-
+                {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Título</label>
                     <input type="text" name="title" id="title" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    {{-- TODO: Completa el input para el año --}}
+                    <label for="title">Año</label>
+                    <input type="text" name="year" id="title" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    {{-- TODO: Completa el input para el director --}}
+                    <label for="title">Director</label>
+                    <input type="text" name="director" id="title" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    {{-- TODO: Completa el input para el poster --}}
+                    <label for="title">Póster</label>
+                    <input type="text" name="poster" id="title" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -41,9 +41,7 @@
                         Añadir película
                     </button>
                 </div>
-
-                {{-- TODO: Cerrar formulario --}}
-
+            </form>
             </div>
         </div>
     </div>

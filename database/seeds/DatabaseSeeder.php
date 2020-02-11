@@ -192,8 +192,8 @@ class DatabaseSeeder extends Seeder
         private function seedUsers(){
             DB::table('users')->delete();
             $u=new User;
-            $u->name="Pepito";
-            $u->email="pepito@bestclub.com";
+            $u->name="Administrador";
+            $u->email="admin@admin.com";
             $u->password=Hash::make('123456');
             $u->save();
 

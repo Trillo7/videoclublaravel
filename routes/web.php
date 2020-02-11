@@ -14,19 +14,18 @@
 
 Route::get('/', 'HomeController@getHome');
 
-Route::get('login', function ($varlogin="Pagina de login") {
-    return view('auth.login')
-        ->with('varpagina',$varlogin);
+Route::group(['middleware' =>    'auth'],   function()  {
+    Route::get('catalog','CatalogController@getIndex');
+
+    Route::get('catalog/show/{id}', 'CatalogController@getShow');
+
+    Route::get('catalog/create', 'CatalogController@getCreate');
+
+    Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
 });
 
-Route::post('logout', function () {
-    return null;
-});
 
-Route::get('catalog','CatalogController@getIndex');
 
-Route::get('catalog/show/{id}', 'CatalogController@getShow');
 
-Route::get('catalog/create', 'CatalogController@getCreate');
+Auth::routes();
 
-Route::get('catalog/edit/{id}', 'CatalogController@getEdit');

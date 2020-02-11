@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
     <div class="container">
         <a class="navbar-brand" href="{{url('/')}}" style="color:#777"><span style="font-size:15pt">&#9820;</span> Videoclub</a>
 
@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        @if( true || Auth::check() )
+        @if( Auth::check() )
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
@@ -33,6 +33,16 @@
                     </li>
                 </ul>
             </div>
+        @elseif(!Auth::check())
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/register')}}">
+                        <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+                        Regístrate
+                    </a>
+                </li>
+            </ul>
+
         @endif
     </div>
 </nav>

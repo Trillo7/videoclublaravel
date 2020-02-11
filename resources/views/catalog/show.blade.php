@@ -18,7 +18,7 @@
             </p>
             <button type="submit" name="devolver" class="btn btn-danger">Devolver película</button>
             <a name="editar" class="btn btn-warning" href="{{url('catalog/edit').'/'.$pelicula->id}}"><i class="fas fa-spin fa-pencil-alt"></i> Editar película</a>
-            <button type="button" name="atras" class="btn btn-light"> <i class="far fa-arrow-alt-circle-left"></i> Volver al listado</button>
+            <a name="atras" class="btn btn-light" href="{{url('catalog')}}"> <i class="far fa-arrow-alt-circle-left"></i> Volver al listado</a>
 
         </div>
     </div>

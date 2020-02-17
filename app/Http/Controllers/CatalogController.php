@@ -17,6 +17,7 @@ class CatalogController extends Controller
     }
     public function getCreate()
     {
+//        flash('Message')->error()->important();
         return view('catalog.create');
     }
     public function getEdit($id)
@@ -33,6 +34,8 @@ class CatalogController extends Controller
         //$p->rented = $pelicula['rented'];
         $p->synopsis = $request->input('synopsis');
         $p->save();
+        flash('Pelicula añadida')->success();
+        flash()->overlay('Modal Message', 'Modal Title');
         return redirect('catalog');
     }
     public function putEdit($id , Request $request) {

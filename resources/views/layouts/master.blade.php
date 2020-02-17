@@ -15,6 +15,7 @@
 <body>
 @include('partials.navbar')
 <div class="container">
+    @include('flash::message')
     @yield('content')
 </div>
 <!-- Optional JavaScript -->
